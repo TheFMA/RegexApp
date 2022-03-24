@@ -15,10 +15,12 @@ namespace RegexApp.Models
         {
             string result = "";
             Regex rex = new Regex(pattern);
-            MatchCollection y = rex.Matches(text);
-            foreach (Match x in y)
-            {
-                result += (x.Value + "\n");
+            if (text != null){
+                MatchCollection y = rex.Matches(text);
+                foreach (Match x in y)
+                {
+                    result += (x.Value + "\n");
+                }
             }
             return result;
         }
